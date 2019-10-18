@@ -17,24 +17,24 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='billinfo.proto',
-  package='helloworld',
+  package='billinfo',
   syntax='proto3',
-  serialized_options=_b('\n\033io.grpc.examples.helloworldB\017HelloWorldProtoP\001\242\002\003HLW'),
-  serialized_pb=_b('\n\x0e\x62illinfo.proto\x12\nhelloworld\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1d\n\nHelloReply\x12\x0f\n\x07message\x18\x01 \x01(\t2I\n\x07Greeter\x12>\n\x08SayHello\x12\x18.helloworld.HelloRequest\x1a\x16.helloworld.HelloReply\"\x00\x42\x36\n\x1bio.grpc.examples.helloworldB\x0fHelloWorldProtoP\x01\xa2\x02\x03HLWb\x06proto3')
+  serialized_options=_b('\n\031io.grpc.examples.billinfoB\rBillInfoProtoP\001\242\002\003HLW'),
+  serialized_pb=_b('\n\x0e\x62illinfo.proto\x12\x08\x62illinfo\"\x1b\n\x0b\x42illRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1c\n\tBillReply\x12\x0f\n\x07message\x18\x01 \x01(\t2F\n\x07Greeter\x12;\n\x0bRequestInfo\x12\x15.billinfo.BillRequest\x1a\x13.billinfo.BillReply\"\x00\x42\x32\n\x19io.grpc.examples.billinfoB\rBillInfoProtoP\x01\xa2\x02\x03HLWb\x06proto3')
 )
 
 
 
 
-_HELLOREQUEST = _descriptor.Descriptor(
-  name='HelloRequest',
-  full_name='helloworld.HelloRequest',
+_BILLREQUEST = _descriptor.Descriptor(
+  name='BillRequest',
+  full_name='billinfo.BillRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='helloworld.HelloRequest.name', index=0,
+      name='name', full_name='billinfo.BillRequest.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -52,20 +52,20 @@ _HELLOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30,
-  serialized_end=58,
+  serialized_start=28,
+  serialized_end=55,
 )
 
 
-_HELLOREPLY = _descriptor.Descriptor(
-  name='HelloReply',
-  full_name='helloworld.HelloReply',
+_BILLREPLY = _descriptor.Descriptor(
+  name='BillReply',
+  full_name='billinfo.BillReply',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='message', full_name='helloworld.HelloReply.message', index=0,
+      name='message', full_name='billinfo.BillReply.message', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -83,47 +83,47 @@ _HELLOREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=60,
-  serialized_end=89,
+  serialized_start=57,
+  serialized_end=85,
 )
 
-DESCRIPTOR.message_types_by_name['HelloRequest'] = _HELLOREQUEST
-DESCRIPTOR.message_types_by_name['HelloReply'] = _HELLOREPLY
+DESCRIPTOR.message_types_by_name['BillRequest'] = _BILLREQUEST
+DESCRIPTOR.message_types_by_name['BillReply'] = _BILLREPLY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-HelloRequest = _reflection.GeneratedProtocolMessageType('HelloRequest', (_message.Message,), {
-  'DESCRIPTOR' : _HELLOREQUEST,
+BillRequest = _reflection.GeneratedProtocolMessageType('BillRequest', (_message.Message,), {
+  'DESCRIPTOR' : _BILLREQUEST,
   '__module__' : 'billinfo_pb2'
-  # @@protoc_insertion_point(class_scope:helloworld.HelloRequest)
+  # @@protoc_insertion_point(class_scope:billinfo.BillRequest)
   })
-_sym_db.RegisterMessage(HelloRequest)
+_sym_db.RegisterMessage(BillRequest)
 
-HelloReply = _reflection.GeneratedProtocolMessageType('HelloReply', (_message.Message,), {
-  'DESCRIPTOR' : _HELLOREPLY,
+BillReply = _reflection.GeneratedProtocolMessageType('BillReply', (_message.Message,), {
+  'DESCRIPTOR' : _BILLREPLY,
   '__module__' : 'billinfo_pb2'
-  # @@protoc_insertion_point(class_scope:helloworld.HelloReply)
+  # @@protoc_insertion_point(class_scope:billinfo.BillReply)
   })
-_sym_db.RegisterMessage(HelloReply)
+_sym_db.RegisterMessage(BillReply)
 
 
 DESCRIPTOR._options = None
 
 _GREETER = _descriptor.ServiceDescriptor(
   name='Greeter',
-  full_name='helloworld.Greeter',
+  full_name='billinfo.Greeter',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=91,
-  serialized_end=164,
+  serialized_start=87,
+  serialized_end=157,
   methods=[
   _descriptor.MethodDescriptor(
-    name='SayHello',
-    full_name='helloworld.Greeter.SayHello',
+    name='RequestInfo',
+    full_name='billinfo.Greeter.RequestInfo',
     index=0,
     containing_service=None,
-    input_type=_HELLOREQUEST,
-    output_type=_HELLOREPLY,
+    input_type=_BILLREQUEST,
+    output_type=_BILLREPLY,
     serialized_options=None,
   ),
 ])

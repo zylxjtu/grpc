@@ -14,10 +14,10 @@ class GreeterStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.SayHello = channel.unary_unary(
-        '/helloworld.Greeter/SayHello',
-        request_serializer=billinfo__pb2.HelloRequest.SerializeToString,
-        response_deserializer=billinfo__pb2.HelloReply.FromString,
+    self.RequestInfo = channel.unary_unary(
+        '/billinfo.Greeter/RequestInfo',
+        request_serializer=billinfo__pb2.BillRequest.SerializeToString,
+        response_deserializer=billinfo__pb2.BillReply.FromString,
         )
 
 
@@ -25,7 +25,7 @@ class GreeterServicer(object):
   """The greeting service definition.
   """
 
-  def SayHello(self, request, context):
+  def RequestInfo(self, request, context):
     """Sends a greeting
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -35,12 +35,12 @@ class GreeterServicer(object):
 
 def add_GreeterServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'SayHello': grpc.unary_unary_rpc_method_handler(
-          servicer.SayHello,
-          request_deserializer=billinfo__pb2.HelloRequest.FromString,
-          response_serializer=billinfo__pb2.HelloReply.SerializeToString,
+      'RequestInfo': grpc.unary_unary_rpc_method_handler(
+          servicer.RequestInfo,
+          request_deserializer=billinfo__pb2.BillRequest.FromString,
+          response_serializer=billinfo__pb2.BillReply.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'helloworld.Greeter', rpc_method_handlers)
+      'billinfo.Greeter', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))
